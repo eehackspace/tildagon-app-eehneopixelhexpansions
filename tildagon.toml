@@ -1,6 +1,6 @@
 [app]
 # The name of your app as displayed in the menu
-name = "NeoPixel Hexpansions"
+name = "EEH NeoPixel Hexpansions"
 
 # The submenu where your app should appear.
 # One of: "Badge", "Music", "Media", "Apps", "Games"
