@@ -1,6 +1,6 @@
 [app]
 # The name of your app as displayed in the menu
-name = "EEH NeoPixel Hexpansions"
+name = "EEH NeoPixels"
 
 # The submenu where your app should appear.
 # One of: "Badge", "Music", "Media", "Apps", "Games"
@@ -28,7 +28,7 @@ author = "Matt Emerick-Law"
 license = "MIT"
 
 # URL to the repository of your app.
-url = "https://github.com/eehackspace/tildagon-app-eehk9/"
+url = "https://github.com/eehackspace/tildagon-app-eehneopixelhexpansions/"
 
 # Description of your app.  Maximum 140 characters!
 description = "Control the NeoPixels on the East Essex Hackspace Hexpansions (EEH Logo, Dalek, K9, Sonic Screwdriver and TARDIS). Buy from https://hex.eehack.space"
@@ -37,4 +37,4 @@ description = "Control the NeoPixels on the East Essex Hackspace Hexpansions (EE
 # increased, we interpret this as a new version being released.
 #
 # Version number must be an integer!
-version = "1.0.1"
+version = "1.0.2"
