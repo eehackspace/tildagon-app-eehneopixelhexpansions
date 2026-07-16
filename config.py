@@ -29,7 +29,7 @@ HEXPANSION_TYPES = {
     "Dalek": 3,  # eye, ear left, ear right
     "K9": 1,  # eye
     "Sonic Screwdriver": 1,  # tip
-    "Tardis": 5,  # window ×4, beacon
+    "TARDIS": 5,  # window ×4, beacon
 }
 
 # Named LED groups per hexpansion type
@@ -47,7 +47,7 @@ HEXPANSION_GROUPS = {
     "Sonic Screwdriver": [
         {"name": "Tip", "leds": [0]},
     ],
-    "Tardis": [
+    "TARDIS": [
         {"name": "Beacon", "leds": [4]},
         {"name": "Windows", "leds": [1, 0, 3, 2]},
     ],

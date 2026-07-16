@@ -443,7 +443,7 @@ _DEFAULT_PRESETS = {
             },
         },
     },
-    "Tardis": {
+    "TARDIS": {
         "Default": {
             "Beacon": {
                 "effect": "Breathe",

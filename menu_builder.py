@@ -387,18 +387,15 @@ def build_menu(a, menu_name, previous_menu):
         a.menu = Menu(
             a,
             [
-                "Version: 0.1.0",
+                "Version: 1.0.1",
                 "",
                 "Essex Hackspace",
                 "Neopixel Hexpansions",
                 "EEH Logo / Dalek / K9",
-                "Sonic Screwdriver / Tardis",
-                "eehack.space",
+                "Sonic Screwdriver / TARDIS",
                 "",
                 "Available at",
-                "EMF 2026 at",
-                "the East Essex",
-                "Hackspace village!",
+                "hex.eehack.space",
             ],
             back_handler=a.back_handler,
         )
