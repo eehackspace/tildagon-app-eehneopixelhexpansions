@@ -10,7 +10,12 @@ from .slot_settings import (
     get_slot_power,
     get_group_setting,
 )
-from .presets import get_preset_names, is_builtin_preset, get_preset_settings
+from .presets import (
+    get_preset_names,
+    get_first_preset_name,
+    is_builtin_preset,
+    get_preset_settings,
+)
 from .palettes import get_user_palette_names, get_user_palette_stops
 
 _GROUP_MENU_ITEMS = ["Power", "Speed", "Brightness", "Effect", "Palette"]
@@ -247,17 +252,25 @@ def build_menu(a, menu_name, previous_menu):
             a.notification = Notification("No presets!")
             a.set_menu("slot")
             return
-        preset_data = get_preset_settings(all_names[0], hexp_type)
+        first_name = get_first_preset_name(hexp_type)
+        if first_name not in all_names:
+            first_name = all_names[0]
+        preset_data = get_preset_settings(first_name, hexp_type)
         a.effects.clear_preview(a.current_slot)
         for group_name, group_data in preset_data.items():
             for key, val in group_data.items():
                 a.effects.set_preview(a.current_slot, group_name, key, val)
+        try:
+            pos = all_names.index(first_name)
+        except ValueError:
+            pos = 0
         a.menu = Menu(
             a,
             list(all_names),
             select_handler=a.select_handler,
             change_handler=a.change_handler,
             back_handler=a.back_handler,
+            position=pos,
         )
 
     elif menu_name == "slot_preset_delete":
@@ -387,7 +400,7 @@ def build_menu(a, menu_name, previous_menu):
         a.menu = Menu(
             a,
             [
-                "Version: 1.0.1",
+                "Version: 1.0.3",
                 "",
                 "Essex Hackspace",
                 "Neopixel Hexpansions",

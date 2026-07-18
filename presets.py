@@ -645,11 +645,20 @@ def get_preset_names(hexp_type):
         for n in raw.split(",")
         if n and settings.get("drwho.preset.{}.type".format(n), "") == hexp_type
     ]
-    all_names = sorted(builtin + user)
-    if "Default" in all_names:
-        all_names.remove("Default")
-        all_names.insert(0, "Default")
+    all_names = sorted(builtin + user, key=lambda n: n.casefold())
+    default_idx = next(
+        (i for i, n in enumerate(all_names) if n.casefold() == "default"), None
+    )
+    if default_idx is not None:
+        default_name = all_names.pop(default_idx)
+        all_names.insert(0, default_name)
     return all_names
+
+
+def get_first_preset_name(hexp_type):
+    """Return the initial preset name for a type, preferring Default."""
+    names = get_preset_names(hexp_type)
+    return names[0] if names else None
 
 
 def save_preset(name, hexp_type, slot_num):
