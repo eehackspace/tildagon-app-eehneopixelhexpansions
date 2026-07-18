@@ -645,9 +645,9 @@ def get_preset_names(hexp_type):
         for n in raw.split(",")
         if n and settings.get("drwho.preset.{}.type".format(n), "") == hexp_type
     ]
-    all_names = sorted(builtin + user, key=lambda n: n.casefold())
+    all_names = sorted(builtin + user, key=lambda n: n.lower())
     default_idx = next(
-        (i for i, n in enumerate(all_names) if n.casefold() == "default"), None
+        (i for i, n in enumerate(all_names) if n.lower() == "default"), None
     )
     if default_idx is not None:
         default_name = all_names.pop(default_idx)

@@ -37,4 +37,4 @@ description = "Control the NeoPixels on the East Essex Hackspace Hexpansions (EE
 # increased, we interpret this as a new version being released.
 #
 # Version number must be an integer!
-version = "1.0.3"
+version = "1.0.4"

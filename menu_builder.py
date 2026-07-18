@@ -400,7 +400,7 @@ def build_menu(a, menu_name, previous_menu):
         a.menu = Menu(
             a,
             [
-                "Version: 1.0.3",
+                "Version: 1.0.4",
                 "",
                 "Essex Hackspace",
                 "Neopixel Hexpansions",
